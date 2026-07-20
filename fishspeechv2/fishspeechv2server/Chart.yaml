@@ -1,6 +1,0 @@
-﻿apiVersion: v2
-appVersion: 'webui-cuda-20260407'
-description: Fish Speech Server
-name: fishspeechv2server
-type: application
-version: '1.0.8'

@@ -1,6 +1,0 @@
-image:
-  version: '12.1.4'
-
-workloads:
-  grafana:
-    replicaCount: 1

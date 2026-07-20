@@ -1,6 +1,0 @@
-image:
-  version: 'latest'
-
-workloads:
-  showdoc:
-    replicaCount: 1

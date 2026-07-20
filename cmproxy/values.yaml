@@ -1,3 +1,0 @@
-workloads:
-  cmproxy:
-    replicaCount: 1

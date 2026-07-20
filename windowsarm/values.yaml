@@ -1,3 +1,0 @@
-workloads:
-  windowsarm:
-    replicaCount: 1

@@ -1,5 +1,0 @@
-workloads:
-  bytebase:
-    replicaCount: 1
-  bytebaseproxy:
-    replicaCount: 1

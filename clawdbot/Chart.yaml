@@ -1,6 +1,0 @@
-apiVersion: v2
-appVersion: '2026.6.9'
-description: description
-name: clawdbot
-type: application
-version: 1.0.15

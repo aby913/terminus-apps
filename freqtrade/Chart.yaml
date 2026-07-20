@@ -1,6 +1,0 @@
-apiVersion: v2
-appVersion: "2026.3"
-description: description
-name: freqtrade
-type: application
-version: 1.0.6

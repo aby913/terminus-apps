@@ -1,7 +1,0 @@
-wewerss:
-  MYSQL_DATABASE: 'wewe_rss'
-workloads:
-  wewerss:
-    replicaCount: 1
-  wewerssweb:
-    replicaCount: 1

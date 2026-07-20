@@ -1,3 +1,0 @@
-workloads:
-  uptimekuma:
-    replicaCount: 1

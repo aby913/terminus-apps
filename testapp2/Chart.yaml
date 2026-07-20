@@ -1,6 +1,0 @@
-apiVersion: v2
-name: testapp2
-description: description
-type: application
-version: "1.0.4"
-appVersion: 0.17.5

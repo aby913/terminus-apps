@@ -1,5 +1,0 @@
-workloads:
-  sillytaverningress:
-    replicaCount: 1
-  sillytavern:
-    replicaCount: 1

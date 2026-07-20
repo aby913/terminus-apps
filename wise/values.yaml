@@ -1,6 +1,0 @@
-# Per-workload replica counts (keys match Deployment metadata.name and
-# workloadReplicas in OlaresManifest).
-#   wise — Wise frontend nginx Deployment (== appid / Release.Name)
-workloads:
-  wise:
-    replicaCount: 1

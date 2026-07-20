@@ -1,6 +1,0 @@
-apiVersion: v2
-appVersion: 'BAAI/bge-m3'
-description: description
-name: vllmbgem3
-type: application
-version: 1.0.11

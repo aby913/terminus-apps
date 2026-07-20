@@ -1,6 +1,0 @@
-apiVersion: v2
-appVersion: 7.8.9
-description: description
-name: focalboard
-type: application
-version: 1.0.10
