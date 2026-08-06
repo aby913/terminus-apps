@@ -1,6 +1,0 @@
-image:
-  version: 'latest'
-
-workloads:
-  mongodb:
-    replicaCount: 1

@@ -1,6 +1,0 @@
-image:
-  version: 'latest'
-
-workloads:
-  prowlarr:
-    replicaCount: 1

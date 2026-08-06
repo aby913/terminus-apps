@@ -1,3 +1,0 @@
-workloads:
-  llmgatewayv3:
-    replicaCount: 1

@@ -1,8 +1,0 @@
-port: 80
-workloads:
-  terminal:
-    replicaCount: 1
-  isaaclab:
-    replicaCount: 1
-  isaaclabingress:
-    replicaCount: 1

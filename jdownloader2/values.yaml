@@ -1,3 +1,0 @@
-workloads:
-  jdownloader2:
-    replicaCount: 1

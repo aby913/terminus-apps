@@ -1,5 +1,0 @@
-workloads:
-  litellmingress:
-    replicaCount: 1
-  litellm:
-    replicaCount: 1

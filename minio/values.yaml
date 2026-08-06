@@ -1,6 +1,0 @@
-image:
-  version: 'latest'
-
-workloads:
-  minio:
-    replicaCount: 2

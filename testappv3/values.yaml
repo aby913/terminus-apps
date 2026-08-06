@@ -1,3 +1,0 @@
-workloads:
-  testappv3:
-    replicaCount: 1

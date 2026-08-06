@@ -1,6 +1,0 @@
-image:
-  version: 'latest'
-
-workloads:
-  rabbitmq:
-    replicaCount: 1

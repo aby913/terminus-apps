@@ -1,6 +1,0 @@
-apiVersion: v2
-appVersion: 0.17.5
-description: description
-name: testapp3v2
-type: application
-version: 1.0.3

@@ -1,6 +1,0 @@
-apiVersion: v2
-appVersion: '2.7.5'
-description: description
-name: immich
-type: application
-version: 1.0.28

@@ -1,6 +1,0 @@
-apiVersion: v2
-appVersion: 'paddleocr-vl-1.5-gguf'
-description: PaddleOCR-VL GGUF HF download UI proxy (client)
-name: paddleocrgguf
-type: application
-version: '1.0.5'

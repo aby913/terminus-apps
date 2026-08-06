@@ -1,5 +1,0 @@
-workloads:
-  nextcloud:
-    replicaCount: 1
-  nextcloudweb:
-    replicaCount: 1

@@ -1,4 +1,0 @@
-models:
-  - name: "rembgv2_models_20251203.tar.zst"
-    output: "./downloads"
-    md5: "775b230ae84727f28063391e27496158"

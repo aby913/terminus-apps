@@ -1,6 +1,0 @@
-image:
-  version: 'latest'
-
-workloads:
-  ipfs:
-    replicaCount: 1

@@ -1,6 +1,0 @@
-apiVersion: v2
-appVersion: 'qwen3-embedding:0.6b'
-description: description
-name: ollamaqwen3embed06bv2server
-type: application
-version: '1.0.7'

@@ -1,3 +1,0 @@
-workloads:
-  testappexternal:
-    replicaCount: 1

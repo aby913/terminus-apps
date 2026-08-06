@@ -1,5 +1,0 @@
-workloads:
-  tensorzero:
-    replicaCount: 1
-  tensorzeroingress:
-    replicaCount: 1

@@ -1,6 +1,0 @@
-image:
-  version: 'latest'
-
-workloads:
-  nostream:
-    replicaCount: 1
