@@ -6,7 +6,7 @@ spec:
   fullDescription: |
     This app helps you run Macos on Olares.
     Based on dockur's MacOS inside a Docker container.
-    1
+    12
 
     **Features**
     - KVM acceleration
