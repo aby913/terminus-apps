@@ -1,0 +1,138 @@
+olaresManifest.version: '0.12.0'
+olaresManifest.type: app
+apiVersion: 'v3'
+
+workloadReplicas:
+  nextcloudweb: 1
+  nextcloud: 1
+metadata:
+  name: nextcloud
+  description: The productivity platform that keeps you in control
+  icon: https://app.cdn.olares.com/appstore/nextcloud/icon2.png
+  appid: nextcloud
+  version: '1.0.19'
+  title: Nextcloud
+  categories:
+  - Productivity_v112
+
+permission:
+  appData: true
+  appCache: true
+  userData:
+  - Home
+  externalData: true
+spec:
+  versionName: '31.0.4'
+  featuredImage: https://app.cdn.olares.com/appstore/nextcloud/1.webp
+  promoteImage:
+  - https://app.cdn.olares.com/appstore/nextcloud/1.webp
+  - https://app.cdn.olares.com/appstore/nextcloud/2.webp
+  - https://app.cdn.olares.com/appstore/nextcloud/3.webp
+  - https://app.cdn.olares.com/appstore/nextcloud/4.webp
+  fullDescription: |
+    Nextcloud puts your data at your fingertips, under your control.
+    Store your documents, calendar, contacts and photos on a server at home, at one of our providers or in a data center you trust.
+
+    **Why is this so awesome?**
+    - Access your Data You can store your files, contacts, calendars, conversations and more on a server of your choosing.
+    - Sync your Data You keep your files, contacts, calendars, and more synchronized amongst your devices.
+    - Share your Data …by giving others access to the stuff you want them to see or to collaborate with.
+    - Expandable with hundreds of Apps ...like Calendar, Contacts, Mail, Video Chat and all those you can discover in our App Store
+    - Security with our encryption mechanisms, HackerOne bounty program and two-factor authentication.
+
+  upgradeDescription: |
+    Switch the reverse-proxy image from Bitnami OpenResty (`beclab/aboveos-bitnami-openresty:1.25.3-2`) to the official OpenResty image `openresty/openresty:1.29.2.5-bookworm-fat`.
+
+    Align nginx config mounts and log paths with the official image layout (`/etc/nginx/conf.d/default.conf`, `/usr/local/openresty/nginx/logs/...`), and drop Bitnami-specific `OPENRESTY_CONF_FILE` wiring.
+
+    v1.0.18: Move `POSTGRES_PASSWORD` and `NEXTCLOUD_ADMIN_PASSWORD` into Secret (`secretKeyRef`).
+
+    Fix update (v1.0.14)
+
+    What's Fixed
+    - Fix Calendar, Contacts, and other CalDAV/CardDAV features stuck loading or failing with errors such as `findAllCalendars` / `_extractAdvertisedDavFeatures`
+    - The reverse proxy no longer short-circuits OPTIONS requests for `/remote.php/dav/` and related API paths; DAV headers are now passed through from Nextcloud correctly
+
+    Note: Nextcloud version remains 31.0.4. No application upgrade in this release.
+
+  developer: Nextcloud GmbH
+  submitter: Olares
+  locale:
+  - en-US
+  - zh-CN
+  requiredMemory: 1Gi
+  limitedMemory: 2.5Gi
+  requiredDisk: 128Mi
+  limitedDisk: 20Gi
+  requiredCpu: 0.75
+  limitedCpu: 2
+  doc: https://nextcloud.com/support/
+  website: https://nextcloud.com/
+  sourceCode: https://github.com/nextcloud/server
+  legal:
+  - text: Legal Note
+    url: https://nextcloud.com/impressum/
+  - text: Code of Conduct
+    url: https://nextcloud.com/contribute/code-of-conduct/
+  - text: Privacy
+    url: https://nextcloud.com/privacy/
+  license:
+  - text: AGPL-3.0
+    url: https://github.com/nextcloud/server/blob/master/COPYING
+  supportClient:
+    android: https://play.google.com/store/apps/details?id=com.nextcloud.client
+    ios: https://apps.apple.com/us/app/nextcloud/id1125420102
+  supportArch:
+  - amd64
+  - arm64
+  runAsUser: true
+middleware:
+  postgres:
+    username: nextcloud
+    password: nextcloud
+    databases:
+    - name: nextcloud
+      distributed: true
+  redis:
+    namespace: nextcloud
+options:
+  allowedOutboundPorts:
+  - 465
+  - 587
+  dependencies:
+  - name: olares
+    version: '>=1.12.6-0'
+    type: system
+  policies:
+  - uriRegex: ^/(/login)(/.*)?(\?.*)?$
+    level: one_factor
+    oneTime: false
+    validDuration: 3600s
+    entranceName: nextcloud
+  - uriRegex: ^/
+    level: public
+    oneTime: false
+    validDuration: 3600s
+    entranceName: nextcloud
+entrances:
+- name: nextcloud
+  port: 8080
+  host: nextcloud-web
+  title: Nextcloud
+  icon: https://app.cdn.olares.com/appstore/nextcloud/icon2.png
+  openMethod: window
+  authLevel: internal
+
+envs:
+- envName: NEXTCLOUD_ADMIN_USER
+  type: string
+  required: true
+  editable: false
+  description: "Username must be at least 3 characters long, contain only letters and numbers, and include at least one letter."
+  regex: '^(?=.*[a-zA-Z])[A-Za-z0-9]{3,}$'
+- envName: NEXTCLOUD_ADMIN_PASSWORD
+  type: password
+  required: true
+  editable: false
+  description: "Password must be at least 8 characters long, with at least one uppercase letter, one lowercase letter, one number and one special character"
+  regex: '^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[\-!@#$%^&*()_+={}\[\]:,.?~])[A-Za-z\d\-!@#$%^&*()_+={}\[\]:,.?~]{8,}$'

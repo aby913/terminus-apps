@@ -1,0 +1,26 @@
+metadata:
+  title: Nextcloud
+  description: The productivity platform that keeps you in control
+spec:
+  fullDescription: |
+    Nextcloud puts your data at your fingertips, under your control.
+    Store your documents, calendar, contacts and photos on a server at home, at one of our providers or in a data center you trust.
+
+    **Why is this so awesome?**
+    - Access your Data You can store your files, contacts, calendars, conversations and more on a server of your choosing.
+    - Sync your Data You keep your files, contacts, calendars, and more synchronized amongst your devices.
+    - Share your Data …by giving others access to the stuff you want them to see or to collaborate with.
+    - Expandable with hundreds of Apps ...like Calendar, Contacts, Mail, Video Chat and all those you can discover in our App Store
+    - Security with our encryption mechanisms, HackerOne bounty program and two-factor authentication.
+  upgradeDescription: |
+    Switch the reverse-proxy image from Bitnami OpenResty (`beclab/aboveos-bitnami-openresty:1.25.3-2`) to the official OpenResty image `openresty/openresty:1.29.2.5-bookworm-fat`.
+
+    Align nginx config mounts and log paths with the official image layout (`/etc/nginx/conf.d/default.conf`, `/usr/local/openresty/nginx/logs/...`), and drop Bitnami-specific `OPENRESTY_CONF_FILE` wiring.
+
+    Fix update (v1.0.14)
+
+    What's Fixed
+    - Fix Calendar, Contacts, and other CalDAV/CardDAV features stuck loading or failing with errors such as `findAllCalendars` / `_extractAdvertisedDavFeatures`
+    - The reverse proxy no longer short-circuits OPTIONS requests for `/remote.php/dav/` and related API paths; DAV headers are now passed through from Nextcloud correctly
+
+    Note: Nextcloud version remains 31.0.4. No application upgrade in this release.
