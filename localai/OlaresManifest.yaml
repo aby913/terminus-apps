@@ -1,6 +1,6 @@
-olaresManifest.version: '0.12.0'
+olaresManifest.version: "0.12.0"
 olaresManifest.type: app
-apiVersion: 'v3'
+apiVersion: "v3"
 
 workloadReplicas:
   localai: 1
@@ -9,25 +9,25 @@ metadata:
   description: The free, Open Source alternative to OpenAI, Claude and others.
   icon: https://app.cdn.olares.com/appstore/localai/icon.png
   appid: localai
-  version: '1.0.19'
+  version: "1.0.20"
   title: LocalAI
   categories:
-  - Utilities_v112
+    - Utilities_v112
 
 permission:
   appData: true
   appCache: true
   appCommon: true
   userData:
-  - Home
+    - Home
   externalData: true
 spec:
-  versionName: '4.5.6'
+  versionName: "4.5.6"
   featuredImage: https://app.cdn.olares.com/appstore/localai/1.webp
   promoteImage:
-  - https://app.cdn.olares.com/appstore/localai/1.webp
-  - https://app.cdn.olares.com/appstore/localai/2.webp
-  - https://app.cdn.olares.com/appstore/localai/3.webp
+    - https://app.cdn.olares.com/appstore/localai/1.webp
+    - https://app.cdn.olares.com/appstore/localai/2.webp
+    - https://app.cdn.olares.com/appstore/localai/3.webp
   fullDescription: |
     LocalAI is the free, Open Source OpenAI alternative. LocalAI act as a drop-in replacement REST API that's compatible with OpenAI (Elevenlabs, Anthropic... ) API specifications for local AI inferencing. It allows you to run LLMs, generate images, audio (and not only) locally or on-prem with consumer grade hardware, supporting multiple model families. Does not require GPU.
 
@@ -60,39 +60,39 @@ spec:
   submitter: Olares
   doc: https://localai.io/
   license:
-  - text: MIT
-    url: https://github.com/mudler/LocalAI#MIT-1-ov-file
+    - text: MIT
+      url: https://github.com/mudler/LocalAI#MIT-1-ov-file
   locale:
-  - en-US
-  - zh-CN
+    - en-US
+    - zh-CN
   accelerator:
-  - mode: nvidia
-    requiredMemory: 2Gi
-    limitedMemory: 16Gi
-    requiredDisk: 20Gi
-    limitedDisk: 100Gi
-    requiredCpu: "1"
-    limitedCpu: "3"
-    requiredGPUMemory: 2Gi
-    limitedGPUMemory: 16Gi
+    - mode: nvidia
+      requiredMemory: 2Gi
+      limitedMemory: 16Gi
+      requiredDisk: 20Gi
+      limitedDisk: 100Gi
+      requiredCpu: "1"
+      limitedCpu: "3"
+      requiredGPUMemory: 2Gi
+      limitedGPUMemory: 16Gi
   supportArch:
-  - amd64
+    - amd64
 options:
   apiTimeout: 0
   allowedOutboundPorts:
-  - 465
-  - 587
+    - 465
+    - 587
   dependencies:
-  - name: olares
-    type: system
-    version: '>=1.12.6-0'
+    - name: olares
+      type: system
+      version: ">=1.12.6-0"
 entrances:
-- name: localai
-  port: 8080
-  host: localai
-  title: LocalAI
-  icon: https://app.cdn.olares.com/appstore/localai/icon.png
-  openMethod: window
+  - name: localai
+    port: 8080
+    host: localai
+    title: LocalAI
+    icon: https://app.cdn.olares.com/appstore/localai/icon.png
+    openMethod: window
 envs:
   - envName: HF_ENDPOINT
     required: false
@@ -108,4 +108,4 @@ middleware:
   postgres:
     username: localai
     databases:
-    - name: localai
+      - name: localai
